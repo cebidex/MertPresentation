@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="wwwroot\js\" />
+    <Folder Include="wwwroot\css\" />
   </ItemGroup>
 
 
