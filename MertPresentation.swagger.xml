@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MertPresentation</name>
+    </assembly>
+    <members>
+        <member name="F:MertPresentation.Helpers.ApiResultMessages.MIE01">
+            <summary>
+            No Mission Found 
+            </summary>
+        </member>
+    </members>
+</doc>
