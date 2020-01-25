@@ -1,4 +1,5 @@
 using MertPresentation.Database;
+using MertPresentation.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +25,8 @@ namespace MertPresentation
 
             services.AddDbContext<MertPresentationDBContext>(options => options
                 .UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddTransient<IMissionService, MissionService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

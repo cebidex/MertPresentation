@@ -17,6 +17,7 @@ namespace MertPresentation.Services
         public Task<ApiResult> Delete(Guid Id);
         public Task<IList<MissionGetDto>> Get(String GetName = null);
     }
+
     public class MissionService : IMissionService
     {
         private readonly MertPresentationDBContext _context;
@@ -29,6 +30,7 @@ namespace MertPresentation.Services
         public async Task<ApiResult> Add(MissionAddDto model)
         {
             var entity0 = await _context.People.Where(x => x.Name == model.Name).FirstOrDefaultAsync();
+
             if (entity0 == null)
             {
                 var entity1 = new People
@@ -36,7 +38,6 @@ namespace MertPresentation.Services
                     Id = Guid.NewGuid(),
                     CreatedAt = DateTime.UtcNow
                 };
-
                 entity1.Name = model.Name;
                 await _context.People.AddAsync(entity1);
             }
