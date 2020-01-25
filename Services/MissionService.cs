@@ -73,7 +73,7 @@ namespace MertPresentation.Services
 
             await _context.SaveChangesAsync();
 
-            var entity1 = await _context.Missions.Where(x => x.Name == entity.Name).FirstOrDefaultAsync();
+            var entity1 = await _context.Missions.Where(x => x.Name == entity.Name && !x.IsDeleted).FirstOrDefaultAsync();
             if (entity1 == null)
             {
                 var entity2 = await _context.People.Where(x => x.Name == entity.Name).FirstOrDefaultAsync();
